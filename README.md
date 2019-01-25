@@ -11,19 +11,28 @@ I hope to to answer some questions using Data Analytics afterwards:
 
 I started with this one, since I own a "Pipersberg G4 RF1 c" meter, which is so far the easiest to read out compared to my other meters. The vendor prepared the device to be read out by some proprietary addon you can buy for lots of money.
 
-The physics behind it: At a specific spot behind the cover is some rotating piece of metal. Each rotation refers to 0.01 cubic meters gas usage.
+The physics behind it: At a specific spot behind the cover is some rotating piece of metal. Each rotation refers to 0.01m³ gas usage.
 
 I stumbled upon [Rutg3er's blog](https://rutg3r.com/watermeter-reading-with-inductive-proximity-sensor/), who did the same for his water meter. Like he stated, the  inductive proximity sensor is specified for operation between 6-36V, but it works with the 5V the Raspberry Pi can deliver for me as well.
 
 The hardest part is the actual MacGyver-like mounting of the sensor. There is absolute no tolerance for the placement - minimum movements will cause the sensor to detect no events anymore. I'm curious how stable this works in the long run. Maybe I'll add a logic to my counter script, which will notify me when no events are detected for a certain time and the sensor may have fallen down.
 
-![Gas meter](readme-images/gas.jpg)
+![gas meter](readme-images/gas.jpg)
 
 
 ## Water Meter
 
+This is going to be tough one. Since the meter does not provide any interface, a completely optical approach is needed. So I installed an infrared camera above the meter, so it can also capture images when the light is off.
+
+![water meter](readme-images/water.jpg)
+
+The camera works quite well. However I just entered the image recognition hell. Besides the reflections, just reading the numbers only gives me coarse-grained information in m³.
+
+![water meter](readme-images/water-capture.jpg)
+
+`Work in progress`
 
 ## Electricity Meter
 
-
+`Work in progress`
 

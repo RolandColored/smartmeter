@@ -23,7 +23,7 @@ def setup_gas_sensor(file_handle):
 
 
 if __name__ == '__main__':
-    with open('gas.csv', 'a') as fh:
+    with open('../data/gas.csv', 'a') as fh:
         setup_gas_sensor(fh)
 
         try:
