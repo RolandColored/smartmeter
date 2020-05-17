@@ -1,2 +1,3 @@
 RPi.GPIO
 fake_rpi
+opencv-python
