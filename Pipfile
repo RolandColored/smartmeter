@@ -8,8 +8,6 @@ verify_ssl = true
 [packages]
 rpi-gpio = "*"
 fake-rpi = "*"
-requests = "*"
-matplotlib = "*"
 pillow = "*"
 azure-cognitiveservices-vision-computervision = "*"
 
