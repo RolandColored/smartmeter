@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "739495a355d53df7890a306b05b9eaaad40aa67f7b40b7f24b893d3c700a776d"
+            "sha256": "6e69611b4375d506fab3f23b80e83c04bb5fe861f0cf318b1d95b957d406bb14"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -58,7 +58,8 @@
                 "sha256:f5162ec777ba7138906c9c274353ece5603646c6965570d82905546579573f73",
                 "sha256:fde96af889262e85aa033f8ee1d3241e32bf36228318a61f1ace579df4e8170d"
             ],
-            "markers": "python_version < '3.11' and python_version >= '3.7'",
+            "index": "pypi",
+            "markers": "sys_platform == 'darwin'",
             "version": "==1.21.4"
         },
         "rpi-gpio": {
