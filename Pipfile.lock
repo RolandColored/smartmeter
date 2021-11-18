@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "6e69611b4375d506fab3f23b80e83c04bb5fe861f0cf318b1d95b957d406bb14"
+            "sha256": "cc68a3e671e00ee2c0330b1235596ed3eba00c8510e74b173e330e3a54161a13"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -62,7 +62,7 @@
             "markers": "sys_platform == 'darwin'",
             "version": "==1.21.4"
         },
-        "rpi-gpio": {
+        "rpi.gpio": {
             "hashes": [
                 "sha256:7424bc6c205466764f30f666c18187a0824077daf20b295c42f08aea2cb87d3f"
             ],

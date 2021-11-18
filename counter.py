@@ -23,3 +23,10 @@ def setup_gas_sensor():
 
 if __name__ == '__main__':
     setup_gas_sensor()
+
+    try:
+        while True:
+            time.sleep(1)
+    finally:
+        print('Cleaning up')
+        GPIO.cleanup()
