@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
 # Controls when the workflow will run
@@ -22,9 +20,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a set of commands using the runners shell
       - name: Copy sources
         run: rsync -av --delete --exclude=".*" . /home/pi/smartmeter/
+      
+      - name: Install dependencies
+        run: cd /home/pi/smartmeter/ && pipenv install --deploy
