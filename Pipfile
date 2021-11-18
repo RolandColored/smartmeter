@@ -6,8 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-rpi-gpio = "*"
-fake-rpi = "*"
+"RPi.GPIO" = {version = "*", sys_platform = "== 'linux'"}
+numpy = {version = "*", sys_platform = "== 'darwin'"}
+fake-rpi = {version = "*", sys_platform = "== 'darwin'"}
 
 [requires]
-python_version = "3.7"
+python_version = "3.9"
