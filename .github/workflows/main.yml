@@ -27,6 +27,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Copy sources
-        run: |
-          rm -rf /home/pi/smartmeter/*
-          cp -rv . /home/pi/smartmeter/
+        run: rsync -av --delete --exclude=".*" . /home/pi/smartmeter/
