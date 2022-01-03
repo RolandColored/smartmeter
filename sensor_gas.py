@@ -1,23 +1,29 @@
+from sensor import Sensor
+
 try:
     import RPi.GPIO as GPIO
 except ImportError:
     from fake_rpi.RPi import GPIO
 
 
-def setup_gas_sensor():
-    gas_sensor_pin = 7
+class SensorGas(Sensor):
+    def __init__(self):
+        super().__init__()
+        self.name = 'gas'
 
-    def gas_callback(_):
-        if GPIO.input(gas_sensor_pin) == 1:
-            print('check')
+    def setup_gas_sensor(self):
+        gas_sensor_pin = 7
 
-    # Use physical pin numbering
-    GPIO.setmode(GPIO.BOARD)
-    # Set pin SensorPin to be an input pin and set initial value to be pulled low (off)
-    GPIO.setup(gas_sensor_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-    GPIO.add_event_detect(gas_sensor_pin, GPIO.RISING, callback=gas_callback)
+        def gas_callback(_):
+            if GPIO.input(gas_sensor_pin) == 1:
+                self.counter += 1
 
+        # Use physical pin numbering
+        GPIO.setmode(GPIO.BOARD)
+        # Set pin SensorPin to be an input pin and set initial value to be pulled low (off)
+        GPIO.setup(gas_sensor_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+        GPIO.add_event_detect(gas_sensor_pin, GPIO.RISING, callback=gas_callback)
 
-def cleanup_gas_sensor():
-    GPIO.cleanup()
+    def cleanup(self) -> None:
+        GPIO.cleanup()
 
