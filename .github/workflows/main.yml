@@ -25,4 +25,4 @@ jobs:
         run: rsync -av --delete --exclude=".*" . /home/pi/smartmeter/
       
       - name: Install dependencies
-        run: cd /home/pi/smartmeter/ && pipenv install --deploy
+        run: cd /home/pi/smartmeter/ && export CFLAGS=-fcommon && pipenv install --deploy

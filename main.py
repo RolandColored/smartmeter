@@ -15,7 +15,7 @@ class MetricsServer(BaseHTTPRequestHandler):
 
         for sensor in sensors:
             label, value = sensor.metric_data()
-            self.wfile.write(bytes(f"utility_sensor{{type={label}}} {value}", "utf-8"))
+            self.wfile.write(bytes(f'utility_sensor{{type="{label}"}} {value}', "utf-8"))
 
 
 if __name__ == "__main__":
