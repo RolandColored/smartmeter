@@ -1,6 +1,3 @@
-import datetime
-import time
-
 try:
     import RPi.GPIO as GPIO
 except ImportError:
@@ -21,12 +18,6 @@ def setup_gas_sensor():
     GPIO.add_event_detect(gas_sensor_pin, GPIO.RISING, callback=gas_callback)
 
 
-if __name__ == '__main__':
-    setup_gas_sensor()
+def cleanup_gas_sensor():
+    GPIO.cleanup()
 
-    try:
-        while True:
-            time.sleep(1)
-    finally:
-        print('Cleaning up')
-        GPIO.cleanup()
