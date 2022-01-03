@@ -12,6 +12,7 @@ class SensorGas(Sensor):
     def __init__(self):
         super().__init__()
         self.name = 'gas'
+        self.setup_gas_sensor()
 
     def setup_gas_sensor(self):
         gas_sensor_pin = 7
