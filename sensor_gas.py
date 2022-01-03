@@ -1,3 +1,5 @@
+import logging
+
 from sensor import Sensor
 
 try:
@@ -16,6 +18,7 @@ class SensorGas(Sensor):
 
         def gas_callback(_):
             if GPIO.input(gas_sensor_pin) == 1:
+                logging.info('Gas event detected')
                 self.counter += 1
 
         # Use physical pin numbering
