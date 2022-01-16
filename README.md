@@ -15,9 +15,9 @@ I started with this one, since I own a "Pipersberg G4 RF1 c" meter, which is so 
 
 The physics behind it: At a specific spot behind the cover is some rotating piece of metal. Each rotation refers to 0.01m³ gas usage.
 
-I stumbled upon [Rutg3er's blog](https://rutg3r.com/watermeter-reading-with-inductive-proximity-sensor/), who did the same for his water meter. Like he stated, the  inductive proximity sensor is specified for operation between 6-36V, but it works with the 5V the Raspberry Pi can deliver for me as well.
+I stumbled upon [Rutg3er's blog](https://rutg3r.com/watermeter-reading-with-inductive-proximity-sensor/), who did the same for his water meter. Like he stated, the  inductive proximity sensor is specified for operation between 6-36V, but it works with the 5V the Raspberry Pi can deliver for me as well. To mount the sensor I printed the holder which was [recommended by mrebbet](https://github.com/RolandColored/smartmeter/issues/4#issuecomment-801651757).
 
-The hardest part is the actual MacGyver-like mounting of the sensor. There is absolute no tolerance for the placement - minimum movements will cause the sensor to detect no events anymore. I'm curious how stable this works in the long run. Maybe I'll add a logic to my counter script, which will notify me when no events are detected for a certain time and the sensor may have fallen down.
+While the holder is perfect, it turned out that the detection was very weak and finding a reliable mount spot was nearly impossible. After countless optimization trials I gave up and ordered another sensor "LJ18A3-8-Z/BX-5V" which has a better detection area and is now providing reliable measurements.
 
 ![gas meter](readme-images/gas.jpg)
 
