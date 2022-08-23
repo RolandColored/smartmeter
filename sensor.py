@@ -1,5 +1,7 @@
+from abc import ABC
 
-class Sensor:
+
+class Sensor(ABC):
     def __init__(self):
         self.counter = 0
         self.name = 'generic'
